@@ -1,0 +1,13 @@
+{
+  "name": "scaling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "up": "docker-compose up",
+    "down": "docker-compose down"
+  },
+  "author": "",
+  "license": "ISC"
+}
