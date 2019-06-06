@@ -1,13 +1,12 @@
-const server = require("http");
+const { startCluster } = require("workers-cluster");
 
-const workerName = `Worker-${process.pid}`;
-const port = 3000;
+const pathToWorker = `${__dirname}/workers/server.js`;
+const workerInstances = 4;
 
-const requestHandler = (_, res) => {
-  res.writeHead(200);
-  res.end(`Hello! I am ${workerName}\n`);
+const workers = {
+  [pathToWorker]: workerInstances
 };
 
-server
-  .createServer(requestHandler)
-  .listen(port, () => console.log(`${workerName} listening on port ${port}`));
+startCluster(workers).then(() => {
+  console.log("All workers have been started");
+});

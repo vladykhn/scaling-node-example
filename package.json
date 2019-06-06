@@ -4,12 +4,12 @@
   "description": "git co master git co pure git co pm",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js -i 4",
-    "stop": "pm2 kill"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "pm2": "^3.5.1"
+  "devDependencies": {},
+  "dependencies": {
+    "workers-cluster": "^0.1.2"
   }
 }
